@@ -8,7 +8,6 @@
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 0.6875rem; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -16,42 +15,99 @@
 </head>
 <body>
 
-  Mortgage Calculator
-  Clear All
+  <main class="container">
+    <section class="calculator">
 
-  Mortgage Amount
+      <header class="calculator__header">
+        <h1 class="calculator__title">Mortgage Calculator</h1>
+        <button type="button" class="calculator__clear" form="mortgage-form">Clear All</button>
+      </header>
 
-  Mortgage Term
+      <form id="mortgage-form" class="calculator__form" novalidate>
 
-  Interest Rate
+        <div class="calculator__control">
+          <label for="amount" class="calculator__label">Mortgage Amount</label>
+          <div class="calculator__field">
+            <span class="calculator__unit calculator__unit--prefix" aria-hidden="true">&pound;</span>
+            <input type="text" inputmode="decimal" name="amount" id="amount" class="calculator__input"
+                    aria-describedby="amount-error" aria-invalid="false">
+          </div>
+          <span class="calculator__error" id="amount-error" aria-live="polite" hidden>This field is required</span>
+        </div>
 
-  Mortgage Type
-  Repayment
-  Interest Only
+        <div class="calculator__group">
+          <div class="calculator__control">
+            <label for="term" class="calculator__label">Mortgage Term</label>
+            <div class="calculator__field">
+              <input type="text" inputmode="decimal" name="term" id="term" class="calculator__input"
+                      aria-describedby="term-error" aria-invalid="false">
+              <span class="calculator__unit calculator__unit--suffix" aria-hidden="true">years</span>
+            </div>
+            <span class="calculator__error" id="term-error" aria-live="polite" hidden>This field is required</span>
+          </div>
 
-  Calculate Repayments
+          <div class="calculator__control">
+            <label for="rate" class="calculator__label">Interest Rate</label>
+            <div class="calculator__field">
+              <input type="text" inputmode="decimal" name="rate" id="rate" class="calculator__input"
+                      aria-describedby="rate-error" aria-invalid="false">
+              <span class="calculator__unit calculator__unit--suffix" aria-hidden="true">%</span>
+            </div>
+            <span class="calculator__error" id="rate-error" aria-live="polite" hidden>This field is required</span>
+          </div>
+        </div>
 
-  <!-- Empty results start -->
+        <fieldset class="calculator__type" aria-describedby="type-error">
+          <legend class="calculator__legend">Mortgage Type</legend>
 
-  Results shown here
+          <label class="calculator__radio">
+            <input type="radio" id="repayment" name="type" value="repayment">
+            <span>Repayment</span>
+          </label>
+      
+          <label class="calculator__radio">
+            <input type="radio" id="interest" name="type" value="interest-only">
+            <span>Interest Only</span>
+          </label>
 
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
+          <span id="type-error" class="calculator__error" aria-live="polite" hidden>This field is required</span>
+        </fieldset>
 
-  <!-- Empty results end -->
+        <button type="submit" class="calculator__btn">
+          <img src="./assets/images/icon-calculator.svg" alt="" class="calculator__icon">
+          Calculate Repayments
+        </button>
 
-  <!-- Completed results start -->
+      </form>
+    </section>
 
-  Your results
+    <section class="result">
+      <div id="empty-state" class="result__empty">
+        <img src="./assets/images/illustration-empty.svg" alt="" class="result__img">
+        <h2 class="result__title-empty">Results shown here</h2>
+        <p class="result__text-empty">
+          Complete the form and click “calculate repayments” to see what
+          your monthly repayments would be.
+        </p>
+      </div>
 
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
+      <div id="complete-state" class="result__completed" aria-live="polite" hidden>
+        <h2 class="result__title">Your results</h2>
+        <p class="result__text">
+          Your results are shown below based on the information you provided.
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>
 
-  Your monthly repayments
+        <div class="result__card">
+          <p class="result__text">Your monthly repayments</p>
+          <span class="result__repayment"></span>
+          <p class="result__text">Total you'll repay over the term</p>
+          <span class="result__term"></span>
+        </div>
 
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
+      </div>
+    </section>
+  </main>
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
