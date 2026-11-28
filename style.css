@@ -279,3 +279,59 @@ button {
     color: hsl(228, 45%, 44%);
     text-decoration: none;
 }
+
+@media (min-width: 48em) {
+    body {
+        background-color: var(--slate-100);
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 1.5em;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-content: center;
+        max-width: 63em;
+        width: 100%;
+        margin-inline: auto;
+        background-color: var(--white);
+        overflow: hidden;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px color-mix(in srgb, var(--slate-900) 10%, transparent);
+    }
+
+    .calculator {
+        padding: 2em;
+    }
+
+    .calculator__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .calculator__group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5em;
+    }
+
+    .result {
+        border-end-start-radius: 100px;
+        display: flex;
+        align-items: center;
+        padding: 2.5em;
+    }
+
+    .result__completed {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .calculator__btn {
+        width: auto;
+        padding-inline: 2.5rem;
+    }
+} 
