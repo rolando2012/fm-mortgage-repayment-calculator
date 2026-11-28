@@ -8,10 +8,8 @@
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -32,7 +30,7 @@
             <input type="text" inputmode="decimal" name="amount" id="amount" class="calculator__input"
                     aria-describedby="amount-error" aria-invalid="false">
           </div>
-          <span class="calculator__error" id="amount-error" aria-live="polite" hidden>This field is required</span>
+          <p class="calculator__error" id="amount-error" aria-live="polite" hidden>This field is required</p>
         </div>
 
         <div class="calculator__group">
@@ -43,7 +41,7 @@
                       aria-describedby="term-error" aria-invalid="false">
               <span class="calculator__unit calculator__unit--suffix" aria-hidden="true">years</span>
             </div>
-            <span class="calculator__error" id="term-error" aria-live="polite" hidden>This field is required</span>
+            <p class="calculator__error" id="term-error" aria-live="polite" hidden>This field is required</p>
           </div>
 
           <div class="calculator__control">
@@ -53,7 +51,7 @@
                       aria-describedby="rate-error" aria-invalid="false">
               <span class="calculator__unit calculator__unit--suffix" aria-hidden="true">%</span>
             </div>
-            <span class="calculator__error" id="rate-error" aria-live="polite" hidden>This field is required</span>
+            <p class="calculator__error" id="rate-error" aria-live="polite" hidden>This field is required</p>
           </div>
         </div>
 
@@ -70,7 +68,7 @@
             <span>Interest Only</span>
           </label>
 
-          <span id="type-error" class="calculator__error" aria-live="polite" hidden>This field is required</span>
+          <p id="type-error" class="calculator__error" aria-live="polite" hidden>This field is required</p>
         </fieldset>
 
         <button type="submit" class="calculator__btn">
